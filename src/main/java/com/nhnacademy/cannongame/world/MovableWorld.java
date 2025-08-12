@@ -1,5 +1,7 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.world;
 
+import com.nhnacademy.cannongame.ball.Ball;
+import com.nhnacademy.cannongame.ball.MovableBall;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;

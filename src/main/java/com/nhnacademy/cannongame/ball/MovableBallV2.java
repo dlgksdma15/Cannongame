@@ -1,8 +1,10 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.ball;
 
+import com.nhnacademy.cannongame.Point;
+import com.nhnacademy.cannongame.Vector2D;
 import javafx.scene.paint.Color;
 
-public class MovableBallV2 extends PaintableBall{
+public class MovableBallV2 extends PaintableBall {
     private Vector2D velocity;
     private Vector2D acceleration; // 가속도
 

@@ -1,5 +1,6 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.ball;
 
+import com.nhnacademy.cannongame.Point;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 

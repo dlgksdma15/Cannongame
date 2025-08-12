@@ -1,10 +1,15 @@
 package com.nhnacademy.cannongame;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.verify;
 
+import com.nhnacademy.cannongame.ball.Ball;
+import com.nhnacademy.cannongame.ball.PaintableBall;
+import com.nhnacademy.cannongame.world.World;
 import javafx.scene.paint.Color;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
 import java.util.NoSuchElementException;
 

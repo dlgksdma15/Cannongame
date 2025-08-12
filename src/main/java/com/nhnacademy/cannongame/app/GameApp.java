@@ -1,4 +1,4 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.app;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

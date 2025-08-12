@@ -1,4 +1,6 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.ball;
+
+import com.nhnacademy.cannongame.Point;
 
 public class Ball{
     private Point center; // Point 타입의 중심점

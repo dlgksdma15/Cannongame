@@ -1,5 +1,7 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.ball;
 
+import com.nhnacademy.cannongame.Point;
+import com.nhnacademy.cannongame.Vector2D;
 import javafx.scene.paint.Color;
 
 public class MovableBall extends PaintableBall{
@@ -11,6 +13,7 @@ public class MovableBall extends PaintableBall{
 
     public MovableBall(Point center, double radius, Color color) {
         super(center, radius, color);
+        this.velocity = new Vector2D(0,0); // 속도를 0으로 초기화
     }
 
     public MovableBall(Point center, double radius, Color color, Vector2D velocity){
@@ -31,6 +34,7 @@ public class MovableBall extends PaintableBall{
         // 메서드 활용
     }
 
+    // 속도 set
     public void setVelocity(Vector2D velocity) {
         this.velocity = velocity;
     }

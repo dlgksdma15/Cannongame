@@ -1,5 +1,7 @@
 package com.nhnacademy.cannongame;
 
+import com.nhnacademy.cannongame.ball.Ball;
+import com.nhnacademy.cannongame.world.World;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;

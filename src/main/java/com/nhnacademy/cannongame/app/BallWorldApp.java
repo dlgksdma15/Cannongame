@@ -1,5 +1,8 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.app;
 
+import com.nhnacademy.cannongame.ball.PaintableBall;
+import com.nhnacademy.cannongame.Point;
+import com.nhnacademy.cannongame.world.World;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -11,14 +14,16 @@ import javafx.stage.Stage;
 
 import java.util.Random;
 
-public class BallWorld extends Application {
-    private static final int WORLD_WIDTH = 800;
-    private static final int WORLD_HEIGHT = 600;
+public class BallWorldApp extends Application {
+    protected static final int WORLD_WIDTH = 800;
+    protected static final int WORLD_HEIGHT = 600;
+    protected final Random random = new Random();
 
-    private World world;
-    private Canvas canvas;
-    private GraphicsContext gc;
-    private final Random random = new Random();
+    protected World world;
+    protected Canvas canvas;
+    protected GraphicsContext gc;
+
+
 
     public static void main(String[] args) {
         launch(args);
@@ -28,7 +33,7 @@ public class BallWorld extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         world = new World(WORLD_WIDTH,WORLD_HEIGHT);
-        javafx.scene.canvas.Canvas canvas = new javafx.scene.canvas.Canvas(WORLD_WIDTH,WORLD_HEIGHT);
+        Canvas canvas = new Canvas(WORLD_WIDTH,WORLD_HEIGHT);
         gc = canvas.getGraphicsContext2D();
         
         // 랜덤한 공 5개 생성

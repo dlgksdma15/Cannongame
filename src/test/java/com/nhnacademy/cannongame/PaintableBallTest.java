@@ -1,6 +1,7 @@
 package com.nhnacademy.cannongame;
 
-import javafx.scene.canvas.GraphicsContext;
+import com.nhnacademy.cannongame.ball.Ball;
+import com.nhnacademy.cannongame.ball.PaintableBall;
 import javafx.scene.paint.Color;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
