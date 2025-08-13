@@ -5,10 +5,11 @@ import com.nhnacademy.cannongame.entity.Vector;
 import com.nhnacademy.cannongame.entity.Vector2D;
 
 public class SimpleMovableBall extends AbstractBall{
-    private Vector velocity;
+    private Vector2D velocity;
 
     public SimpleMovableBall(Point center, double radius) {
         super(center, radius);
+        this.velocity = new Vector2D(0,0);
     }
 
 
@@ -24,7 +25,7 @@ public class SimpleMovableBall extends AbstractBall{
         this.velocity = velocity;
     }
 
-    public Vector getVelocity(){
+    public Vector2D getVelocity(){
         return velocity;
     }
 }

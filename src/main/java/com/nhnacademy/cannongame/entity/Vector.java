@@ -17,10 +17,10 @@ public abstract class Vector{
         return Math.sqrt(sum);
     }
 
+    // 벡터를 정규화하여 크기를 1로 만듭니다.
     public Vector normalize() {
         double mag = magnitude();
         if (mag == 0.0) {
-            // 크기가 0인 벡터는 정규화할 수 없으므로 새로운 0 벡터 반환
             return createNew();
         }
 

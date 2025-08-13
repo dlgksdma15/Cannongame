@@ -21,6 +21,15 @@ public abstract class Bounds {
     public double getCenterY(){
         return getMinY() + getHeight() / 2.0;
     }
+    public double getArea(){
+        if(this instanceof CircleBounds) {
+            CircleBounds circle = (CircleBounds) this;
+            return Math.PI * Math.pow(circle.getRadius(), 2);
+        } else if(this instanceof RectangleBounds){
+            return getWidth() * getHeight();
+        }
+        return 0;
+    }
     // 점 포함 여부
     public boolean contains(Point point){
         return (point.getX() >= getMinY() && point.getX() <= getMaxX()) &&

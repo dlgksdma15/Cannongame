@@ -1,6 +1,6 @@
 package com.nhnacademy.cannongame;
 
-import com.nhnacademy.cannongame.entity.Rectangle;
+import com.nhnacademy.cannongame.shapes.Rectangle;
 import com.nhnacademy.cannongame.shapes.Circle;
 import com.nhnacademy.cannongame.shapes.Shape;
 import org.junit.jupiter.api.Test;

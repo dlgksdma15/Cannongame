@@ -1,7 +1,6 @@
-package com.nhnacademy.cannongame.entity;
+package com.nhnacademy.cannongame.shapes;
 
 import com.nhnacademy.cannongame.Point;
-import com.nhnacademy.cannongame.shapes.Shape;
 
 public class Rectangle extends Shape {
     private Point position;

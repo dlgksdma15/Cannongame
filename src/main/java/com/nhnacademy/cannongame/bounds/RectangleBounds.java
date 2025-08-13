@@ -42,4 +42,10 @@ public class RectangleBounds extends Bounds{
         return minY + height;
     }
 
+    public double getX() {
+        return minX;
+    }
+    public double getY(){
+        return minY;
+    }
 }
