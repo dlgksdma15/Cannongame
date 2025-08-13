@@ -9,7 +9,6 @@ public class SimpleMovableBall extends AbstractBall{
 
     public SimpleMovableBall(Point center, double radius) {
         super(center, radius);
-        this.velocity = getVelocity().createNew();
     }
 
 

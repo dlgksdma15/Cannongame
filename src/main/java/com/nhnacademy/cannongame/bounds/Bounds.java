@@ -1,4 +1,6 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.bounds;
+
+import com.nhnacademy.cannongame.Point;
 
 public abstract class Bounds {
 
@@ -30,6 +32,10 @@ public abstract class Bounds {
                 getMaxX() >= other.getMaxX() &&
                 getMinY() <= other.getMinY() &&
                 getMaxX() >= other.getMaxY();
+    }
+    public boolean contains(double x, double y) {
+        return (x >= getMinX() && x <= getMaxX()) &&
+                (y >= getMinY() && y <= getMaxY());
     }
     // 교차 여부
     public boolean intersects(Bounds other){

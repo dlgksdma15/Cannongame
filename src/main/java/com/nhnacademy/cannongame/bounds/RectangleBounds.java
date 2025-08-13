@@ -1,4 +1,4 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.bounds;
 
 public class RectangleBounds extends Bounds{
     private double minX;

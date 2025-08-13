@@ -1,7 +1,7 @@
 package com.nhnacademy.cannongame.ball;
 
-import com.nhnacademy.cannongame.Bounds;
-import com.nhnacademy.cannongame.CircleBounds;
+import com.nhnacademy.cannongame.bounds.Bounds;
+import com.nhnacademy.cannongame.bounds.CircleBounds;
 import com.nhnacademy.cannongame.Point;
 
 public abstract class AbstractBall {
@@ -37,6 +37,14 @@ public abstract class AbstractBall {
 
     }
     protected void updateBounds(double deltaTime){
+        this.bounds = new CircleBounds(center.getX(), center.getY(), radius);
+    }
 
+    public Point getCenter() {
+        return center;
+    }
+
+    public Bounds getBounds() {
+        return bounds;
     }
 }

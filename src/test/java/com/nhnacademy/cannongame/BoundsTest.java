@@ -1,5 +1,8 @@
 package com.nhnacademy.cannongame;
 
+import com.nhnacademy.cannongame.bounds.Bounds;
+import com.nhnacademy.cannongame.bounds.CircleBounds;
+import com.nhnacademy.cannongame.bounds.RectangleBounds;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

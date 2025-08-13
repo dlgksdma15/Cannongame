@@ -6,8 +6,8 @@ package com.nhnacademy.cannongame;
 // Vector2D + Vector2D = Vector2D: 변위의 합성
 
 public class Vector2D {
-    private final double x;
-    private final double y;
+    private double x;
+    private double y;
 
     public Vector2D() {
         this.x = 0;
@@ -47,8 +47,16 @@ public class Vector2D {
         return x;
     }
 
+    public void setX(double x) {
+        this.x = x;
+    }
+
     public double getY() {
         return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 
     @Override

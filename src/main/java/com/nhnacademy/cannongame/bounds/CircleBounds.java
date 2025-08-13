@@ -1,4 +1,6 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.bounds;
+
+import com.nhnacademy.cannongame.Point;
 
 public class CircleBounds extends Bounds{
     private Point point;
