@@ -1,7 +1,7 @@
 package com.nhnacademy.cannongame.world;
 
-import com.nhnacademy.cannongame.BallCollision;
-import com.nhnacademy.cannongame.CollisionDetector;
+import com.nhnacademy.cannongame.collsion.BallCollision;
+import com.nhnacademy.cannongame.collsion.CollisionDetector;
 import com.nhnacademy.cannongame.ball.Ball;
 import com.nhnacademy.cannongame.ball.BoundedBall;
 

@@ -1,5 +1,7 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.collsion;
 
+import com.nhnacademy.cannongame.Point;
+import com.nhnacademy.cannongame.Vector2D;
 import com.nhnacademy.cannongame.ball.BoundedBall;
 
 // 벽과의 충돌을 감지하고 처리하는 유틸리티 클래스입니다:

@@ -41,7 +41,7 @@ public class MovableBallV2 extends PaintableBall {
     public void limitSpeed(double maxSpeed) {
         double currentSpeed = velocity.magnitude();
         if (currentSpeed > maxSpeed) {
-            velocity = velocity.normalize().multiply(maxSpeed);
+            velocity = ((Vector2D) velocity.normalize()).multiply(maxSpeed);
         }
     }
 }

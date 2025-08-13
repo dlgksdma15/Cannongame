@@ -1,5 +1,7 @@
-package com.nhnacademy.cannongame;
+package com.nhnacademy.cannongame.collsion;
 
+import com.nhnacademy.cannongame.Point;
+import com.nhnacademy.cannongame.Vector2D;
 import com.nhnacademy.cannongame.ball.Ball;
 import com.nhnacademy.cannongame.ball.MovableBall;
 
@@ -42,7 +44,7 @@ public final class BallCollision {
         MovableBall mBall2 = (MovableBall) ball2;
 
         // 1. 충돌 방향 벡터 계산
-        Vector2D collisionNormal = mBall2.getCenter().subtract(mBall1.getCenter()).normalize();
+        Vector2D collisionNormal = (Vector2D) mBall2.getCenter().subtract(mBall1.getCenter()).normalize();
 
         // 2. 상대 속도 계산
         Vector2D relativeVelocity = mBall2.getVelocity().subtract(mBall1.getVelocity());
