@@ -7,17 +7,19 @@ import javafx.scene.paint.Color;
 public class MovableBall extends PaintableBall{
     private Vector2D velocity;
 
-    public MovableBall(Point center, double radius){
-        super(center, radius);
+    // 생성자 1: 색상과 속도를 기본값으로 초기화
+    public MovableBall(Point center, double radius) {
+        this(center, radius, Color.RED, new Vector2D(0, 0));
     }
 
+    // 생성자 2: 색상만 지정하고 속도는 기본값으로 초기화
     public MovableBall(Point center, double radius, Color color) {
-        super(center, radius, color);
-        this.velocity = new Vector2D(0,0); // 속도를 0으로 초기화
+        this(center, radius, color, new Vector2D(0, 0));
     }
 
-    public MovableBall(Point center, double radius, Color color, Vector2D velocity){
-        super(center,radius,color);
+    // 생성자 3: 모든 필드를 받아 초기화 (최종 생성자)
+    public MovableBall(Point center, double radius, Color color, Vector2D velocity) {
+        super(center, radius, color); // 부모 클래스(PaintableBall) 생성자 호출
         this.velocity = velocity;
     }
 

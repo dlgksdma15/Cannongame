@@ -1,4 +1,4 @@
-package com.nhnacademy.cannongame.collsion;
+package com.nhnacademy.cannongame.collision;
 
 import com.nhnacademy.cannongame.Point;
 import com.nhnacademy.cannongame.Vector2D;

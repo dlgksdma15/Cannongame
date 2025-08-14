@@ -3,7 +3,7 @@ package com.nhnacademy.cannongame;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.nhnacademy.cannongame.ball.BoundedBall;
-import com.nhnacademy.cannongame.collsion.CollisionDetector;
+import com.nhnacademy.cannongame.collision.CollisionDetector;
 import javafx.scene.paint.Color;
 import org.junit.jupiter.api.Test;
 

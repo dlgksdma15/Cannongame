@@ -63,14 +63,29 @@ public class Ball{
         return radius * radius * Math.PI;
     }
 
-    public boolean isColliding(Ball other){
-        Point otherCenter = other.center;
-        if(other == null){
+    public boolean isColliding(Ball other) {
+        if (other == null) {
             return false;
         }
-        if(center.distanceTo(otherCenter) < radius + other.radius){
-            return false;
+
+        // 두 공의 중심점 사이의 거리를 계산합니다.
+        double distanceBetweenCenters = this.center.distanceTo(other.center);
+
+        // 충돌 조건: 중심점 사이의 거리가 두 반지름의 합보다 작을 경우
+        // 기존 코드의 'if' 문 조건과 반대입니다.
+        if (distanceBetweenCenters < this.radius + other.radius) {
+            return true;
         }
-        return true;
+        return false;
     }
+//    public boolean isColliding(Ball other){
+//        Point otherCenter = other.center;
+//        if(other == null){
+//            return false;
+//        }
+//        if(center.distanceTo(otherCenter) < radius + other.radius){
+//            return false;
+//        }
+//        return true;
+//    }
 }

@@ -2,7 +2,7 @@ package com.nhnacademy.cannongame;
 
 import com.nhnacademy.cannongame.ball.Ball;
 import com.nhnacademy.cannongame.ball.MovableBall;
-import com.nhnacademy.cannongame.collsion.BallCollision;
+import com.nhnacademy.cannongame.collision.BallCollision;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

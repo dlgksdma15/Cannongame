@@ -2,7 +2,7 @@ package com.nhnacademy.cannongame.world;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.nhnacademy.cannongame.collsion.BallCollision;
+import com.nhnacademy.cannongame.collision.BallCollision;
 import com.nhnacademy.cannongame.Point;
 import com.nhnacademy.cannongame.Vector2D;
 import com.nhnacademy.cannongame.ball.BoundedBall;

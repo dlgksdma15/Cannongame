@@ -26,7 +26,7 @@ public class PaintableBall extends Ball {
     public void setColor(Color color){
         if(color == null){
             color = Color.RED;
-            //throw new IllegalArgumentException("색상은 null일 수 없습니다.");
+            throw new IllegalArgumentException("색상은 null일 수 없습니다.");
 
         }
         this.color = color;
