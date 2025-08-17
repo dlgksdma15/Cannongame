@@ -2,23 +2,23 @@ package com.nhnacademy.cannongame.simpleworld;
 
 import com.nhnacademy.cannongame.bounds.Bounds;
 import com.nhnacademy.cannongame.bounds.CircleBounds;
+import com.nhnacademy.cannongame.breakout.UnbreakableBrick;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Ball implements Paintable, Movable, Collidable{
+public class Ball implements Paintable, Movable, Collidable {
     // 위치와 크기
     private double x;
     private double y;
     private double radius;
     // 속도
-    private double dx;
-    private double dy;
+    protected double dx;
+    protected double dy;
     //색상
-    private Color color;
+    protected Color color;
     // 충돌 시 행동
     private CollisionAction collisionAction;
     private boolean isDestroyed = false;
-
 
     public Ball(double x, double y, double radius, Color color, CollisionAction collisionAction) {
         this.x = x;
@@ -27,21 +27,21 @@ public class Ball implements Paintable, Movable, Collidable{
         this.color = color;
         this.collisionAction = collisionAction;
     }
+
     public Ball(double x, double y, double radius, Color color) {
         this.x = x;
         this.y = y;
         this.radius = radius;
         this.color = color;
         this.collisionAction = CollisionAction.BOUNCE;
-
     }
+
     public Ball(double x, double y, double radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
         this.color = Color.RED;
         this.collisionAction = CollisionAction.BOUNCE;
-
     }
 
     @Override
@@ -51,23 +51,47 @@ public class Ball implements Paintable, Movable, Collidable{
     }
 
     @Override
-    public void move(double deltaTime){
+    public void move(double deltaTime) {
         x += dx * deltaTime;
         y += dy * deltaTime;
     }
-    // Collidable 구현
+
     @Override
-    public Bounds getBounds(){
-        return new CircleBounds(x,y,radius);
+    public Bounds getBounds() {
+        return new CircleBounds(x, y, radius);
     }
 
     @Override
-    public boolean isColliding(Boundable other){
-        // 실제 충돌 검사 로직 (여기서는 사각형 경계 교차만 검사)
-        return this.getBounds().intersects(other.getBounds()); // 겹치면 true 반환
+    public boolean isColliding(Boundable other) {
+        return this.getBounds().intersects(other.getBounds());
     }
+
     @Override
     public void handleCollision(Collidable other) {
+        // UnbreakableBrick과의 충돌 로직을 다른 충돌 처리보다 먼저 실행
+        if (other instanceof UnbreakableBrick) {
+            UnbreakableBrick wall = (UnbreakableBrick) other;
+            Bounds wallBounds = wall.getBounds();
+
+            // 공의 중심과 벽의 경계를 비교하여 충돌 방향을 판단
+            double ballCenterX = this.x;
+            double ballCenterY = this.y;
+            double wallMinX = wallBounds.getMinX();
+            double wallMaxX = wallBounds.getMaxX();
+            double wallMinY = wallBounds.getMinY();
+            double wallMaxY = wallBounds.getMaxY();
+
+            // 수평 벽(상단/하단)과 충돌 시 Y 속도 반전
+            if (ballCenterY - this.radius < wallMinY || ballCenterY + this.radius > wallMaxY) {
+                this.setDy(-this.getDy());
+            }
+            // 수직 벽(좌/우)과 충돌 시 X 속도 반전
+            else if (ballCenterX - this.radius < wallMinX || ballCenterX + this.radius > wallMaxX) {
+                this.setDx(-this.getDx());
+            }
+            return;
+        }
+
         switch (collisionAction) {
             case BOUNCE:
                 // 충돌한 객체가 Movable이면 반사
@@ -81,7 +105,6 @@ public class Ball implements Paintable, Movable, Collidable{
                 this.setDy(-this.getDy());
                 break;
             case DESTROY:
-                // 제거 로직: 객체를 제거할 수 있는 방법
                 this.isDestroyed = true;
                 System.out.println("충돌로 인해 객체 파괴");
                 break;
@@ -93,15 +116,18 @@ public class Ball implements Paintable, Movable, Collidable{
                 // 아무것도 하지 않음 (통과)
                 break;
             default:
-                // 사용자 정의 충돌 처리
                 System.out.println("사용자 정의 충돌 처리");
                 break;
-
-        };
+        }
     }
+
     @Override
-    public CollisionAction getCollisionAction(){
+    public CollisionAction getCollisionAction() {
         return collisionAction;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     @Override
@@ -139,7 +165,20 @@ public class Ball implements Paintable, Movable, Collidable{
     public double getY() {
         return y;
     }
-    public boolean isDestroyed(){
+
+    public boolean isDestroyed() {
         return isDestroyed;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 }

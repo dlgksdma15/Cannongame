@@ -32,6 +32,7 @@ public class Vector2D {
     public double magnitude(){ // 크기(벡터의 길이)
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
+
     public Vector2D normalize(){ // 정규화
         double mag = magnitude();
         if(mag == 0){
