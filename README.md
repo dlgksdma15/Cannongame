@@ -34,6 +34,8 @@ n
 클래스 다이어그램
 아래 다이어그램은 이 게임의 객체 지향 설계 구조를 나타냅니다. 기능별로 Movable, Paintable, Collidable과 같은 인터페이스를 분리하여 클래스 간의 결합도를 낮추고 유연성을 높였습니다.
 
+<img width="1450" height="1056" alt="image" src="https://github.com/user-attachments/assets/ca6777c6-d6fd-4e76-b47a-23f8f5db7498" />
+
 🛠️ 개발 환경 설정
 JDK 설치: Java Development Kit를 설치합니다.
 
